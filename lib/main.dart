@@ -22,6 +22,8 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
+  bool _alertIsVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +32,15 @@ class _GamePageState extends State<GamePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Hello BullsEye',
+            'Welcome to my first App!!',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green),
           ),
           TextButton(
-              onPressed: () {},
+              onPressed: () {
+                this._alertIsVisible = true;
+                _showAlert(context);
+                print("Button pressed");
+              },
               child: Text(
                 'Hit me!',
                 style: TextStyle(color: Colors.blue),
@@ -42,5 +48,25 @@ class _GamePageState extends State<GamePage> {
         ],
       ),
     ));
+  }
+
+  void _showAlert(BuildContext context) {
+    Widget okButton = TextButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+          this._alertIsVisible = false;
+          print("Awsome pressed! $_alertIsVisible");
+        },
+        child: Text("Awsome!"));
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Hello there!"),
+            content: Text("This is my first pop-up"),
+            actions: [okButton],
+            elevation: 5,
+          );
+        });
   }
 }
