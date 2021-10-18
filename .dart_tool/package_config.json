@@ -128,13 +128,13 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "bulls_eye",
+      "name": "flutter_game",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.10"
     }
   ],
-  "generated": "2021-10-17T18:35:15.685788Z",
+  "generated": "2021-10-18T16:52:52.161164Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

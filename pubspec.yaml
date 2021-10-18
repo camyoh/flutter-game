@@ -1,5 +1,5 @@
-name: bulls_eye
-description: My Firts Flutter App
+name: flutter_game
+description: My First Flutter App
 
 dependencies:
     flutter:
